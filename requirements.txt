@@ -21,3 +21,4 @@ six==1.16.0
 tomlkit==0.13.2
 tzdata==2024.2
 pyfakefs
+python-dotenv
