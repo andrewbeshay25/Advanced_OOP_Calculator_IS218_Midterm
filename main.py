@@ -1,4 +1,6 @@
 import logging
+import os
+from dotenv import load_dotenv 
 
 from app.file_manager import setup_logging  # Import the logging setup function
 
@@ -7,8 +9,14 @@ from app.calculator import Calculator
 from typing import Dict, Type
 from app.history_manager import HistoryManager
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Retrieve logging path from environment variable
+logging_path = os.getenv('LOGGING_PATH', 'logging/app.log')  # Default path if env variable is missing
+
 # Set up logging for the entire project
-setup_logging(logging.INFO, 'logging/app.log')
+setup_logging(logging.INFO, logging_path)
 
 # Dictionary mapping operation strings to the corresponding calculation class.
 operations_map: Dict[str, Type] = {
