@@ -9,6 +9,8 @@ from app.calculator import Calculator
 from typing import Dict, Type
 from app.history_manager import HistoryManager
 
+from data.csv_manager import CsvManager
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -36,6 +38,7 @@ class CommandProcessor:
     def __init__(self) -> None:
         """Initializes the CommandProcessor with a Calculator instance."""
         self.calculator = Calculator()
+        self.csv_manager = CsvManager()
 
     def execute(self, command: str) -> None:
         """
@@ -76,7 +79,10 @@ class CommandProcessor:
 
         # Perform the calculation and print the result
         try:
+            # Split command and parse as before
+        # After calculating, log to CSV
             result = self.calculator.perform_operation(calculation)
+            self.csv_manager.log_operation(operation, a, b, result)
             print(f"Result: {result}")
             logging.info(f"Performed Operation: {calculation}")  # This uses the __str__ of the calculation class
         except ZeroDivisionError:
