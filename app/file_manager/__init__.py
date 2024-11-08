@@ -2,7 +2,7 @@ import os
 import logging
 from typing import Any
 
-def setup_logging(level: int = logging.INFO, log_filename: str = "app.log") -> None:
+def setup_logging(level: int = logging.INFO, log_filename: str = None) -> None:
   # Set up the root logger
     logger = logging.getLogger()
     logger.setLevel(level)
