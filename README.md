@@ -4,7 +4,7 @@
 Welcome to my advanced OOP Calculator! This isn't your everyday calculator—sure, it handles basic operations like addition, subtraction, multiplication, and division, but it goes beyond that. This calculator keeps a detailed log of every action and operation performed, stores a session-long history, and saves all executed operations to a CSV file for easy post-session access. 
 
 ### Walkthrough Video
-Watch a quick walkthrough **[here](assets/is218_midterm_walkthrough)**.
+Watch a quick walkthrough **[here](assets/is218_midterm_walkthrough.mov)**.
 
 ### Technical Highlights
 This project is built to demonstrate advanced object-oriented programming concepts, featuring unit testing and GitHub Actions to enforce code quality. Sensitive configurations are managed using environment variables, adding a layer of security and flexibility to the program. 
